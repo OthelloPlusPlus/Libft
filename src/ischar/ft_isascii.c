@@ -6,23 +6,11 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:05:18 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/04/20 13:31:53 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/02 20:42:12 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||									Is ASCII								  ||
-||																			  ||
-||		Checks whether int c is an ASCII character.							  ||
-||																			  ||
-||		Returns 1 if true, 0 if false.										  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
-
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }

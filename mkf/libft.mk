@@ -14,16 +14,27 @@ OBJ_DIR :=	obj
 DEP_DIR :=	dep
 
 OBJ_DIRS =	$(OBJ_DIR) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_ISCHAR) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_STRING) \
 			$(OBJ_DIR)$(DELIM)$(SRC_DIR_MEM) \
 			$(OBJ_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)
 DIRS =	$(OBJ_DIRS) \
 		$(OBJ_DIRS:$(OBJ_DIR)%=$(DEP_DIR)%)
 
 SRC =	$(SRC_MAIN) \
-		$(SRC_MEM:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_MEM)$(DELIM)%.c) \
-		$(SRC_FT_PRINTF:%.c=	$(SRC_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)$(DELIM)%.c)
+		$(SRC_ISCHAR:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_ISCHAR)$(DELIM)%.c) \
+		$(SRC_STRING:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_STRING)$(DELIM)%.c) \
+		$(SRC_MEM:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_MEM)$(DELIM)%.c)
+# $(SRC_FT_PRINTF:%.c=	$(SRC_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)$(DELIM)%.c)
 
 SRC_MAIN :=	
+
+SRC_DIR_ISCHAR :=	ischar
+SRC_ISCHAR	:=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
+				ft_isprint.c	ft_isascii.c
+
+SRC_DIR_STRING :=	string
+SRC_STRING :=	ft_strlen.c
 
 # SRC_DIR_MEM :=	mem
 # SRC_MEM :=		test.c test2.c test3.c

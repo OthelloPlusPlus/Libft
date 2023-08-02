@@ -1,30 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_isalpha.c                                       :+:    :+:            */
+/*   ft_strlen.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/03/10 18:04:33 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/03/10 18:04:33 by ohengelm      ########   odam.nl         */
+/*   Created: 2022/03/10 19:48:07 by ohengelm      #+#    #+#                 */
+/*   Updated: 2023/08/02 22:05:26 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* ====================================||==================================== *\
 ||																			  ||
-||								   Is Alphabet								  ||
+||								 String Length								  ||
 ||																			  ||
-||		Checks wether char c is alphabet.									  ||
+||		Counts the length of cons char *s.									  ||
 ||																			  ||
-||		Returns 1 if true, 0 if false.										  ||
+||		Returns the length, excluding the '\0'								  ||
 ||																			  ||
 \* ================libft===============||==============©Othello============== */
 
-int	ft_isalpha(int c)
+#include <stddef.h>
+// size_t
+
+size_t	ft_strlen(const char *s)
 {
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	const unsigned long	*ls;
+	size_t				i;
+
+	if (s == NULL)
+		return (0);
+	ls = (const unsigned long *)s;
+	i = 0;
+	while (ls[i] - 0x0101010101010101UL & 0x8080808080808080UL)
+		i++;
+	i *= sizeof(const unsigned long);
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
+
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
+
+// 	if (s == NULL)
+// 		return (0);
+// 	i = 0;
+// 	while (s[i] != '\0')
+// 		i++;
+// 	return (i);
+// }

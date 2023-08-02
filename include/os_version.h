@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   h_os_version.h                                     :+:    :+:            */
+/*   os_version.h                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/16 18:14:26 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/04/16 18:14:28 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/02 14:00:27 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef H_OS_VERSION_H
-# define H_OS_VERSION_H
+#ifndef OS_VERSION_H
+# define OS_VERSION_H
 /* ====================================||==================================== *\
 ||																			  ||
 ||								Operating System							  ||
