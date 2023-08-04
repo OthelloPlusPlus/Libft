@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:40 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/28 13:41:52 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:30:21 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,19 @@
 \* ==============ft_printf=============||==============©Othello============== */
 
 #include "libft.h"
-
-#include <stdarg.h> //va's
-#include <stdlib.h> //free
+// char	*ft_utoa_ultimate(unsigned long long value, char *numbers)
+// void	*ft_calloc(size_t count, size_t size)
+// size_t	ft_strlen(const char *s)
+// void	*ft_memcpy(void *dst, const void *src, size_t n)
+#include "ft_printf_utils.h"
+// t_flags
+// void	ftp_make_flag_struct(const char *str, int *i, t_flags *flags)
+// char	*ftp_convert_string(t_flags *flags, char *string)
+#include <stdarg.h>
+// va_list
+// type	va_arg(va_list ap, type);
+#include <stdlib.h>
+// void	free(void *)
 
 #define UNS unsigned
 

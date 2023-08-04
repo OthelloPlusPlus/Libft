@@ -17,36 +17,84 @@ OBJ_DIRS =	$(OBJ_DIR) \
 			$(OBJ_DIR)$(DELIM)$(SRC_DIR_ISCHAR) \
 			$(OBJ_DIR)$(DELIM)$(SRC_DIR_STRING) \
 			$(OBJ_DIR)$(DELIM)$(SRC_DIR_MEM) \
-			$(OBJ_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_TO) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_ALLOC) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_PUT) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_LINKED_LIST) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_GNL) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_NUMBER) \
+			$(OBJ_DIR)$(DELIM)$(SRC_DIR_MISC)
 DIRS =	$(OBJ_DIRS) \
 		$(OBJ_DIRS:$(OBJ_DIR)%=$(DEP_DIR)%)
 
 SRC =	$(SRC_MAIN) \
 		$(SRC_ISCHAR:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_ISCHAR)$(DELIM)%.c) \
 		$(SRC_STRING:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_STRING)$(DELIM)%.c) \
-		$(SRC_MEM:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_MEM)$(DELIM)%.c)
-# $(SRC_FT_PRINTF:%.c=	$(SRC_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)$(DELIM)%.c)
+		$(SRC_MEM:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_MEM)$(DELIM)%.c) \
+		$(SRC_TO:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_TO)$(DELIM)%.c) \
+		$(SRC_ALLOC:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_ALLOC)$(DELIM)%.c) \
+		$(SRC_PUT:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_PUT)$(DELIM)%.c) \
+		$(SRC_LINKED_LIST:%.c=	$(SRC_DIR)$(DELIM)$(SRC_DIR_LINKED_LIST)$(DELIM)%.c) \
+		$(SRC_GNL:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_GNL)$(DELIM)%.c) \
+		$(SRC_FT_PRINTF:%.c=	$(SRC_DIR)$(DELIM)$(SRC_DIR_FT_PRINTF)$(DELIM)%.c) \
+		$(SRC_NUMBER:%.c=		$(SRC_DIR)$(DELIM)$(SRC_DIR_NUMBER)$(DELIM)%.c) \
+		$(SRC_MISC:%.c=			$(SRC_DIR)$(DELIM)$(SRC_DIR_MISC)$(DELIM)%.c) \
+		
 
 SRC_MAIN :=	
 
 SRC_DIR_ISCHAR :=	ischar
 SRC_ISCHAR	:=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
-				ft_isprint.c	ft_isascii.c
+				ft_isprint.c	ft_isascii.c	ft_isspace.c
 
 SRC_DIR_STRING :=	string
-SRC_STRING :=	ft_strlen.c
+SRC_STRING :=	ft_strlen.c		ft_strlcpy.c	ft_strlcat.c\
+				ft_strchr.c		ft_strrchr.c	ft_strncmp.c\
+				ft_strnstr.c	ft_strdup.c		ft_substr.c\
+				ft_strjoin.c	ft_split.c		ft_strtrim.c\
+				ft_strmapi.c	ft_striteri.c
 
-# SRC_DIR_MEM :=	mem
-# SRC_MEM :=		test.c test2.c test3.c
+SRC_DIR_MEM :=	mem
+SRC_MEM :=	ft_memset.c		ft_bzero.c	ft_memcpy.c\
+			ft_memmove.c	ft_memchr.c	ft_memcmp.c
+
+SRC_DIR_TO :=	to
+SRC_TO :=	ft_toupper.c		ft_tolower.c		ft_atoi.c		ft_itoa.c\
+			ft_utoa_ultimate.c	ft_itoa_ultimate.c	ft_utoclock.c
+
+SRC_DIR_ALLOC :=	alloc
+SRC_ALLOC :=	ft_calloc.c	ft_realloc.c	ft_calloc_exit.c\
+				ft_free.c	ft_free_array.c
+
+SRC_DIR_PUT :=	put
+SRC_PUT :=	ft_putchar_fd.c	ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c
+
+SRC_DIR_LINKED_LIST := linked_list
+SRC_LINKED_LIST :=	ft_lstnew.c		ft_lstadd_front.c	ft_lstadd_back.c\
+					ft_lstsize.c	ft_lstlast.c\
+					ft_lstdelone.c	ft_lstclear.c\
+					ft_lstiter.c	ft_lstmap.c
 
 SRC_DIR_FT_PRINTF :=	ft_printf
-SRC_FT_PRINTF :=	ft_printf.c		ft_dprintf.c\
+SRC_FT_PRINTF :=	ft_printf.c		ft_dprintf.c	ft_strprintf.c\
 					ft_printf_utils.c\
 					ft_printf_utils_convert_arg.c\
 					ft_printf_utils_convert_string.c\
 					ft_printf_utils_convert_string_fieldwidth.c\
 					ft_printf_utils_convert_string_precision.c\
 					ft_printf_utils_flag_struct.c
+
+SRC_DIR_GNL :=	get_next_line
+SRC_GNL :=	get_next_line.c
+
+SRC_DIR_NUMBER :=	number
+SRC_NUMBER :=	ft_lowest_num.c	ft_highest_num.c	ft_reduct_counter.c\
+				ft_random.c		ft_difference.c		ft_sqrt.c
+
+SRC_DIR_MISC :=	misc
+SRC_MISC :=	ft_ilen.c			ft_ulen.c		ft_array_len.c\
+			ft_check_project.c	ft_exit_msg.c
 
 
 OBJ :=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
@@ -59,7 +107,7 @@ $(NAME): $(OBJ)
 			"$(NAME)"
 # Linking object files into static library
 	@ar -rc $(NAME) $(OBJ) 2> $(DEVNULL)
-	@printf	"$(CC_1UP)\t$(C_DGREEN)Static archive $(C_GREEN)%s$(C_DGREEN) created.\n"\
+	@printf	"$(CC_1UP)\t$(C_DGREEN)Static archive $(C_GREEN)%s$(C_DGREEN) created.$(C_RESET)\n"\
 			"$(NAME)"
 
 $(OBJ_DIR)$(DELIM)%.o: $(SRC_DIR)$(DELIM)%.c

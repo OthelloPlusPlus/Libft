@@ -6,13 +6,21 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:36 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:44:54 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:35:14 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// size_t		ft_strlen(const char *s)
+// long long	ft_highest_num(long long val1, long long val2)
+// void			*ft_calloc(size_t count, size_t size)
+// void			*ft_memset(void *b, int c, size_t len)
+#include "ft_printf_utils.h"
+// t_flags
+// int	ftp_print_size(int add_size)
 
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
 static void	prepare_newstr(t_flags *flags, char *new_str, int size);
 static void	copy_into_field_width(t_flags *flags, char *new_str, char *str);

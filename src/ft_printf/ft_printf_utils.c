@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:10 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/28 13:45:42 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:43:35 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,15 @@
 \* ==============ft_printf=============||==============©Othello============== */
 
 #include "libft.h"
+// void	*ft_calloc(size_t count, size_t size)
+// void	*ft_memcpy(void *dst, const void *src, size_t n)
+#include "ft_printf_utils.h"
+// char	*ftp_convert_arg(const char *str, int *i)
+// char	*ftp_merge_strings(char *old_str, char *add)
+// int	ftp_print_size(int add_size)
 
-#include <stdarg.h> //va's
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
 static char	*ftp_basic_char_to_add(const char *string, int i);
 

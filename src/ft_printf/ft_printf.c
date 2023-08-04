@@ -6,51 +6,24 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:04 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/28 13:44:11 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 20:35:22 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_utils.h"
+// char	*ftp_make_string(const char *str)
+// int	ftp_print_size(int add_size)
+// char	*ftp_merge_strings(char *old_str, char *add)
 
-#include <unistd.h> //write
-#include <stdarg.h> //va's
-#include <stdlib.h> //free
-
-/* ====================================||==================================== *\
-||																			  ||
-||								   ft_printf								  ||
-||		Writes a string of characters, using given variable arguments.		  ||
-||																			  ||
-||		Returns written length.												  ||
-||																			  ||
-|| ====================================||==================================== ||
-||																			  ||
-||							   Conversion syntax:							  ||
-||		   %[$][flags][width][.precision][length modifier]conversion		  ||
-||																			  ||
-||					[$]														  ||
-||					[flags]				#0- +								  ||
-||					[width]				[integer]							  ||
-||					[.precision]		.[integer]							  ||
-||					[length modifier]	hh, h, l, ll, q,					  ||
-||										L, j, z, Z, t						  ||
-||					[conversion]		d, i, o, u, x, X, e, E,				  ||
-||										f, F, g, G, a, A, c,				  ||
-||										s, C, S, p, n, m, %					  ||
-||																			  ||
-||			  https://man7.org/linux/man-pages/man3/printf.3.html			  ||
-|| ====================================||==================================== ||
-||																			  ||
-||								   Mandatory:								  ||
-||		   %											  conversion		  ||
-||																			  ||
-||						  Bonus 0-[width][.precision]:						  ||
-||		   %   [flags][width][.precision]				  conversion		  ||
-||																			  ||
-||								   Bonus # +:								  ||
-||		   %   [flags]									  conversion		  ||
-||																			  ||
-\* ==============ft_printf=============||==============©Othello============== */
+#include <stdarg.h>
+// va_list
+// void	va_start(va_list ap, last);
+// void	va_end(va_list ap);
+#include <unistd.h>
+// ssize_t	write(int __fd, const void *__buf, size_t __nbyte)
+// NULL
+#include <stdlib.h>
+// void	free(void *)
 
 int	ft_printf(const char *str, ...)
 {

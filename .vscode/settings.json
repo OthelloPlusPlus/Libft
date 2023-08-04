@@ -1,6 +1,19 @@
 {
 	"files.associations": {
 		"stdlib.h": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"libft_src.h": "c",
+		"string.h": "c",
+		"stdint.h": "c",
+		"stddef.h": "c",
+		"libft.h": "c",
+		"strings.h": "c",
+		"stdbool.h": "c",
+		"limits.h": "c",
+		"additionals.h": "c",
+		"get_next_line.h": "c",
+		"stdarg.h": "c",
+		"ft_printf_utils.h": "c",
+		"errno.h": "c"
 	}
 }

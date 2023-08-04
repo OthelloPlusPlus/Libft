@@ -6,57 +6,24 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:13:20 by ohengelm      #+#    #+#                 */
-/*   Updated: 2023/07/29 21:28:23 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 20:35:12 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_utils.h"
+// char	*ftp_make_string(const char *str)
+// int	ftp_print_size(int add_size)
+// char	*ftp_merge_strings(char *old_str, char *add)
 
-#include <unistd.h>
-//	ssize_t	write(int fildes, const void *buf, size_t nbyte);
 #include <stdarg.h>
-//	void	va_start(va_list ap, last);
-//	type	va_arg(va_list ap, type);
-//	void	va_copy(va_list dest, va_list src);
-//	void	va_end(va_list ap);
+// va_list
+// void	va_start(va_list ap, last);
+// void	va_end(va_list ap);
+#include <unistd.h>
+// ssize_t	write(int __fd, const void *__buf, size_t __nbyte)
+// NULL
 #include <stdlib.h>
-//	void	free(void *ptr);
-
-/* ====================================||==================================== *\
-||																			  ||
-||								   ft_printf								  ||
-||		Writes a string of characters, using given variable arguments.		  ||
-||																			  ||
-||		Returns written length.												  ||
-||																			  ||
-|| ====================================||==================================== ||
-||																			  ||
-||							   Conversion syntax:							  ||
-||		   %[$][flags][width][.precision][length modifier]conversion		  ||
-||																			  ||
-||					[$]														  ||
-||					[flags]				#0- +								  ||
-||					[width]				[integer]							  ||
-||					[.precision]		.[integer]							  ||
-||					[length modifier]	hh, h, l, ll, q,					  ||
-||										L, j, z, Z, t						  ||
-||					[conversion]		d, i, o, u, x, X, e, E,				  ||
-||										f, F, g, G, a, A, c,				  ||
-||										s, C, S, p, n, m, %					  ||
-||																			  ||
-||			  https://man7.org/linux/man-pages/man3/printf.3.html			  ||
-|| ====================================||==================================== ||
-||																			  ||
-||								   Mandatory:								  ||
-||		   %											  conversion		  ||
-||																			  ||
-||						  Bonus 0-[width][.precision]:						  ||
-||		   %   [flags][width][.precision]				  conversion		  ||
-||																			  ||
-||								   Bonus # +:								  ||
-||		   %   [flags]									  conversion		  ||
-||																			  ||
-\* ==============ft_printf=============||==============©Othello============== */
+// void	free(void *)
 
 int	ft_dprintf(int fd, const char *str, ...)
 {

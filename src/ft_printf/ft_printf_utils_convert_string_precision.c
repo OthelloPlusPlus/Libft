@@ -6,13 +6,22 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:32 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:44:59 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:37:21 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// void		*ft_calloc(size_t count, size_t size)
+// size_t	ft_strlen(const char *s)
+// char		*ft_strchr(const char *s, int c)
+// void		*ft_memset(void *b, int c, size_t len)
+// void		*ft_memcpy(void *dst, const void *src, size_t n)
+// size_t	ft_strlen(const char *s)
+#include "ft_printf_utils.h"
+// t_flags
 
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
 static char	*calloc_presicion_size(t_flags *flags, char *string);
 static void	prepare_new_str(t_flags *flags, char *new_str, char *str, int size);

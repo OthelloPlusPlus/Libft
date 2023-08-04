@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:28 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:45:04 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:33:20 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,18 @@
 \* ==============ft_printf=============||==============©Othello============== */
 
 #include "libft.h"
+// char		*ft_strchr(const char *s, int c)
+// size_t	ft_strlen(const char *s)
+// void		*ft_calloc(size_t count, size_t size)
+// void		*ft_memcpy(void *dst, const void *src, size_t n)
+// size_t	ft_strlen(const char *s)
+#include "ft_printf_utils.h"
+// t_flags
+// char *ftp_modify_precision(t_flags *flags, char *string)
+// char *ftp_modify_field_width(t_flags *flags, char *string)
 
-#include <stdarg.h> //va's
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
 static char	*modify_sign(t_flags *flags, char *string);
 static char	*modify_alternate_form(t_flags *flags, char *string);

@@ -19,10 +19,13 @@ clean:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk clean
 
 fclean:
+	@$(RMFILE) .DS_Store
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk fclean
 
 re:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk re
+
+bonus: all
 
 .PHONY: all clean fclean re\
 		libft \

@@ -6,19 +6,15 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:17:05 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:45:51 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 15:19:38 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||								  List Iterate								  ||
-||																			  ||
-||		Changes the entire content of the linked list using function (*f)	  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
+#include "libft.h"
+// t_list
 
-#include "libft.h" //my functions
+#include <stddef.h>
+// NULL
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {

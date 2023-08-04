@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:19 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:45:08 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 19:40:43 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 \* ==============ft_printf=============||==============©Othello============== */
 
 #include "libft.h"
+// void	*ft_memset(void *b, int c, size_t len)
+// char	*ft_strchr(const char *s, int c)
+// int	ft_atoi(const char *str)
+#include "ft_printf_utils.h"
+//t_flags
 
-#include <stdarg.h> //va's
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
 static void	ftp_fill_flag_struct(const char *str, int *i, t_flags *flags);
 static void	ftp_fill_struct_flags(const char *str, int *i, t_flags *flags);
@@ -77,7 +82,7 @@ static void	ftp_fill_struct_width_prec(const char *str, int *i, t_flags *flags)
 	{
 		flags->width = ft_atoi(&str[*i]);
 		while (str[*i] >= '0' && str[*i] <= '9')
-		*i = *i + 1;
+			*i = *i + 1;
 	}
 	if (str[*i] == '.')
 	{

@@ -6,24 +6,19 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:23:30 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:46:00 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 15:20:19 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||								 List map(???)								  ||
-||																			  ||
-||		Creates a new list. Copies every node using function (*f)			  ||
-||		If if failed, uses function (*del) to clear the new list.			  ||
-||																			  ||
-||		Returns a pointer to the new list.									  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
+#include "libft.h"
+// t_list
+// t_list	*ft_lstnew(void *content)
+// void		ft_lstclear(<error-type> **, void (*)(void *))
+// void		ft_lstadd_back(<error-type> **lst, <error-type> *new)
 
-#include "libft.h" //my functions
-
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
+// NULL
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

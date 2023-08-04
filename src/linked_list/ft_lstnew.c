@@ -6,22 +6,16 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:25:47 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:46:04 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 15:20:28 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||									List New								  ||
-||																			  ||
-||		Creates a new node for the list.									  ||
-||		Puts content in ->content of the new node.							  ||
-||																			  ||
-||		Returns the adres of the new node.									  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
+#include "libft.h"
+// t_list
+// void	*ft_calloc(size_t count, size_t size)
 
-#include "libft.h" //my functions
+#include <stddef.h>
+// NULL
 
 t_list	*ft_lstnew(void *content)
 {

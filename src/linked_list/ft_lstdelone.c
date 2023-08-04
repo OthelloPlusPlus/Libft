@@ -6,23 +6,18 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:16:30 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:45:44 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 15:19:27 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||								List Delete One								  ||
-||																			  ||
-||		Clears string lst->content using function del.						  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
+#include "libft.h"
+// t_list
 
-#include "libft.h" //my functions
-#include <stdlib.h> //free
+#include <stdlib.h>
+// void	free(void *)
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *node, void (*del)(void *))
 {
-	del(lst->content);
-	free(lst);
+	del(node->content);
+	free(node);
 }

@@ -6,21 +6,15 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/10 18:17:44 by ohengelm      #+#    #+#                 */
-/*   Updated: 2022/05/27 17:45:55 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/08/04 15:19:43 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ====================================||==================================== *\
-||																			  ||
-||								   List Last								  ||
-||																			  ||
-||		Finds the address of the last node in the linked list.				  ||
-||																			  ||
-||		Returns the address of the last node in the linked list.			  ||
-||																			  ||
-\* ================libft===============||==============©Othello============== */
+#include "libft.h"
+// t_list
 
-#include "libft.h" //my functions
+#include <stddef.h>
+// NULL
 
 t_list	*ft_lstlast(t_list *lst)
 {
