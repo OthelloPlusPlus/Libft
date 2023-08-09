@@ -1,5 +1,4 @@
 # Setting defines based on OS
-# OS	:= $(shell uname -s)
 
 ifeq		($(OS), Windows_NT)
     # DELIM :=        $(shell echo \)
@@ -11,30 +10,22 @@ ifeq		($(OS), Windows_NT)
     STDOUT :=       echo
     TRUE :=         cmd /c exit 0
 
-else ifeq	($(OS), Linux)
+else ifeq   ($(shell uname), $(filter $(shell uname), Linux Darwin))
     DELIM := 		/
     DEVNULL :=		/dev/null
     RMFILE :=		rm -f
     RMDIR :=		find
     RMDIR_FLAGS :=	-type d -empty -delete
-    STDOUT :=       printf
+    STDOUT :=		printf
+    TRUE :=			true
 
-else ifeq	($(OS) ,Darwin)
-    DELIM := 		/
-    DEVNULL :=		/dev/null
-    RMFILE :=		rm -f
-    RMDIR :=		find
-    RMDIR_FLAGS :=	-type d -empty -delete
-    STDOUT :=       printf
-
-else
-    DELIM := 		/
-    DEVNULL :=		/dev/null
-    RMFILE :=		rm -f
-    RMDIR :=		find
-    RMDIR_FLAGS :=	-type d -empty -delete
-    STDOUT :=       printf
+# else
+#     DELIM := 		/
+#     DEVNULL :=		/dev/null
+#     RMFILE :=		rm -f
+#     RMDIR :=		find
+#     RMDIR_FLAGS :=	-type d -empty -delete
+#     STDOUT :=       printf
+#     TRUE :=         true
 
 endif
-
-PRINT_OBJ_INTRO := true

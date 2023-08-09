@@ -1,18 +1,11 @@
-# include $(shell powershell -Command "(Get-ChildItem -Recurse -Filter 'config.mk' | Select-Object -First 1).FullName")
-# E:\hardcoded_correct_path\config.mk
-
 ifeq	($(OS), Windows_NT)
     include $(shell cmd /C "where /r . config.mk")
 else
     include $(shell find . -type f -name 'config.mk' | head -1)
 endif
-# include E:\Codeer\templibft\mkf\config.mk
+
 MKF_DIR = mkf
 
-# all:
-
-# all:
-# 	$(STDOUT) $(MKF_DIR)$(DELIM)config.mk$(STDOUT)
 all: libft
 
 libft:

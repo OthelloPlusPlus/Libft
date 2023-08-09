@@ -134,17 +134,17 @@ $(DIRS):
 clean:
 	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing object files...$(C_RESET)\n"
 # Removing object files
-#	@$(RMFILE) $(OBJ)
+	@$(RMFILE) $(OBJ)
 	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Object files removed.$(C_RESET)\n"
 # Removing dependency files
 	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing dependency files...$(C_RESET)\n"
-#	@$(RMFILE) $(DEP)
+	@$(RMFILE) $(DEP)
 	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Dependency files removed.$(C_RESET)\n"
 
 fclean: clean
 	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing empty directories...$(C_RESET)\n"
 # Removing empty directories
-	@$(RMDIR) $(DIRS) $(RMDIR_FLAGS) 2> $(DEVNULL) || true
+	@$(RMDIR) $(DIRS) $(RMDIR_FLAGS) 2> $(DEVNULL) || $(TRUE)
 	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Empty directories removed.$(C_RESET)\n"
 # Removing Static archive
 	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing $(C_ORANGE)%s$(C_DORANGE)...$(C_RESET)\n"\
