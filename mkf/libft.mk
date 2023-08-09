@@ -1,13 +1,19 @@
-include $(shell find . -type f -name 'config.mk' | head -1)
-include $(shell find . -type f -name 'colors.mk' | head -1)
+ifeq	($(OS), Windows_NT)
+    include $(shell cmd /C "where /r . config.mk")
+    include $(shell cmd /C "where /r . colors.mk")
+    INCL_HDR := $(shell for /r %%i in (*.h) do @echo -I %%~dpi\ | sort)
+else
+    include $(shell find . -type f -name 'config.mk' | head -1)
+    include $(shell find . -type f -name 'colors.mk' | head -1)
+    INCL_HDR :=	$(shell find . -type f -name '*.h' -exec dirname "{}" \; | \
+					uniq | sed -e 's/^/-I/g')
+endif
 
 NAME :=	libft.a
 
 CC :=	gcc
 CFLAGS	+=	-Wall -Wextra -Werror
 DEPFLAGS +=	-MMD -MF $(DEP_DIR)$(DELIM)$*.d
-INCL_HDR :=	$(shell find . -type f -name '*.h' -exec dirname "{}" \; | \
-					uniq | sed -e 's/^/-I/g')
 
 SRC_DIR :=	src
 OBJ_DIR :=	obj
@@ -45,7 +51,7 @@ SRC =	$(SRC_MAIN) \
 SRC_MAIN :=	
 
 SRC_DIR_ISCHAR :=	ischar
-SRC_ISCHAR	:=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
+SRC_ISCHAR	:=	ft_isalpha.c	ft_isdigit.c	\
 				ft_isprint.c	ft_isascii.c	ft_isspace.c
 
 SRC_DIR_STRING :=	string
@@ -96,56 +102,55 @@ SRC_DIR_MISC :=	misc
 SRC_MISC :=	ft_ilen.c			ft_ulen.c		ft_array_len.c\
 			ft_check_project.c	ft_exit_msg.c
 
-
 OBJ :=	$(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 DEP :=	$(SRC:$(SRC_DIR)%.c=$(DEP_DIR)%.d)
 
 all: $(DIRS) $(NAME)
 
 $(NAME): $(OBJ)
-	@printf	"\t$(C_DCYAN)Creating library $(C_CYAN)%s$(C_DCYAN)...$(C_RESET)\n"\
+	@$(STDOUT)	"\t$(C_DCYAN)Creating library $(C_CYAN)%s$(C_DCYAN)...$(C_RESET)\n"\
 			"$(NAME)"
 # Linking object files into static library
 	@ar -rc $(NAME) $(OBJ) 2> $(DEVNULL)
-	@printf	"$(CC_1UP)\t$(C_DGREEN)Static archive $(C_GREEN)%s$(C_DGREEN) created.$(C_RESET)\n"\
+	@$(STDOUT)	"$(CC_1UP)\t$(C_DGREEN)Static archive $(C_GREEN)%s$(C_DGREEN) created.$(C_RESET)\n"\
 			"$(NAME)"
 
 $(OBJ_DIR)$(DELIM)%.o: $(SRC_DIR)$(DELIM)%.c
-	@printf	"$(CC_LINE)\t$(C_LBLUE)Compiling $(C_CYAN)%s$(C_LBLUE)...$(C_RESET)\n" $<
+	@$(STDOUT)	"$(CC_LINE)\t$(C_LBLUE)Compiling $(C_CYAN)%s$(C_LBLUE)...$(C_RESET)\n" $<
 # Compiling object files
-	@$(CC) $(CFLAGS) $(DEPFLAGS) $(INCL_HDR) -c $< -o $@  && \
-	printf	"$(CC_1UP)\t$(C_DCHRT)Compiled $(C_CHRT)%s$(C_DCHRT).$(C_RESET)\n" $@ || \
-	(printf	"$(CC_1UP)\t$(C_DRED)Failed to compile $(C_RED)%s$(C_RESET)\n" $@ && exit 1)
+	@$(CC) $(CFLAGS) $(DEPFLAGS) $(INCL_HDR) -c $< -o $@
+#	$(STDOUT)	"$(CC_1UP)\t$(C_DCHRT)Compiled $(C_CHRT)%s$(C_DCHRT).$(C_RESET)\n" $@ || \
+	($(STDOUT)	"$(CC_1UP)\t$(C_DRED)Failed to compile $(C_RED)%s$(C_RESET)\n" $@ && exit 1)
 
 -include $(DEP)
 
 $(DIRS):
-	@printf	"$(CC_LINE)$(C_DCYAN)Creating directory $(C_CYAN)%s$(C_DCYAN).$(C_RESET)\n"	$@
+	@$(STDOUT)	"$(CC_LINE)$(C_DCYAN)Creating directory $(C_CYAN)%s$(C_DCYAN).$(C_RESET)\n"	$@
 # Making missing directories
-	@mkdir -p $@
-	@printf	"$(CC_1UP)\t$(C_DCHRT)Created directory $(C_CHRT)%s$(C_DCHRT).$(C_RESET)\n" $@
+	@mkdir "$@" || $(TRUE)
+	@$(STDOUT)	"$(CC_1UP)\t$(C_DCHRT)Created directory $(C_CHRT)%s$(C_DCHRT).$(C_RESET)\n" $@
 
 
 clean:
-	@printf	"$(CC_LINE)$(C_DORANGE)Removing object files...$(C_RESET)\n"
+	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing object files...$(C_RESET)\n"
 # Removing object files
-	@$(RMFILE) $(OBJ)
-	@printf	"$(CC_1UP)$(C_DPURPLE)Object files removed.$(C_RESET)\n"
+#	@$(RMFILE) $(OBJ)
+	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Object files removed.$(C_RESET)\n"
 # Removing dependency files
-	@printf	"$(CC_LINE)$(C_DORANGE)Removing dependency files...$(C_RESET)\n"
-	@$(RMFILE) $(DEP)
-	@printf	"$(CC_1UP)$(C_DPURPLE)Dependency files removed.$(C_RESET)\n"
+	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing dependency files...$(C_RESET)\n"
+#	@$(RMFILE) $(DEP)
+	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Dependency files removed.$(C_RESET)\n"
 
 fclean: clean
-	@printf	"$(CC_LINE)$(C_DORANGE)Removing empty directories...$(C_RESET)\n"
+	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing empty directories...$(C_RESET)\n"
 # Removing empty directories
 	@$(RMDIR) $(DIRS) $(RMDIR_FLAGS) 2> $(DEVNULL) || true
-	@printf	"$(CC_1UP)$(C_DPURPLE)Empty directories removed.$(C_RESET)\n"
+	@$(STDOUT)	"$(CC_1UP)$(C_DPURPLE)Empty directories removed.$(C_RESET)\n"
 # Removing Static archive
-	@printf	"$(CC_LINE)$(C_DORANGE)Removing $(C_ORANGE)%s$(C_DORANGE)...$(C_RESET)\n"\
+	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing $(C_ORANGE)%s$(C_DORANGE)...$(C_RESET)\n"\
 			$(NAME)
 	@$(RMFILE) $(NAME)
-	@printf	"$(CC_1UP)$(C_PURPLE)%s$(C_DPURPLE) removed.$(C_RESET)\n"\
+	@$(STDOUT)	"$(CC_1UP)$(C_PURPLE)%s$(C_DPURPLE) removed.$(C_RESET)\n"\
 			$(NAME)
 
 re: fclean all

@@ -1,12 +1,15 @@
 # Setting defines based on OS
-OS	:= $(shell uname -s)
+# OS	:= $(shell uname -s)
 
-ifeq		($(OS), Windows)
-    DELIM := 		$(shell printf '\\')
+ifeq		($(OS), Windows_NT)
+    # DELIM :=        $(shell echo \)
+    DELIM :=        /
     DEVNULL :=		NUL
-    RMFILE :=		del /Q
+    RMFILE :=		del -Force -ErrorAction SilentlyContinue
     RMDIR :=		rmdir
     RMDIR_FLAGS :=	/S /Q
+    STDOUT :=       echo
+    TRUE :=         cmd /c exit 0
 
 else ifeq	($(OS), Linux)
     DELIM := 		/
@@ -14,6 +17,7 @@ else ifeq	($(OS), Linux)
     RMFILE :=		rm -f
     RMDIR :=		find
     RMDIR_FLAGS :=	-type d -empty -delete
+    STDOUT :=       printf
 
 else ifeq	($(OS) ,Darwin)
     DELIM := 		/
@@ -21,6 +25,7 @@ else ifeq	($(OS) ,Darwin)
     RMFILE :=		rm -f
     RMDIR :=		find
     RMDIR_FLAGS :=	-type d -empty -delete
+    STDOUT :=       printf
 
 else
     DELIM := 		/
@@ -28,6 +33,7 @@ else
     RMFILE :=		rm -f
     RMDIR :=		find
     RMDIR_FLAGS :=	-type d -empty -delete
+    STDOUT :=       printf
 
 endif
 
