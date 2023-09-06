@@ -18,7 +18,7 @@ Original project creating the static archive, replicating existing functions and
 **Score:** 120%
 
 > "for the lst_add_front function you could add a protection for empty new, this would make sure your list cannot get lost when new is set to NULL. bonus files should be called *_bonus"
->     - Oswin Florian Bult
+> &nbsp;- Oswin Florian Bult
 
 > "Well designed library. Bonusses didn't have _bonus after them unfortunately. Well done!"
 - Maarten Joosten
