@@ -1,25 +1,23 @@
-# Libft
-An archive containing a collection of functions. These functions can be divided in 4 categories.
-- libft
-- ft_printf
-- get_next_line
-- additionals
+# Introduction
+A compliation of several projects which together create the static library **libft.a**. The library was originally created during the **Libft** project and contains a group of useful functions, most of which are replications of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This has later been completmented in the projects **ft_printf** and **get_next_line**, and has been further complemented by functions I found useful for general usage during later projects.
+
+The projects have been made for study at [**Codam**](https://www.codam.nl/), part of [**42network**](https://www.42network.org/)
+Projects have been made conform **42**'s requirements, which exceptions where compliance resulted in less clean code.
 
 ## Table of Contents
+- [Execution](#Execution)
 - [Libft](#Libft)
-	- [Introduction](#introduction)
-
-## Introduction
+- [ft_printf](#ft_printf)
+- [get_next_line](#get_next_line)
 
 ## Execution
 Functions have been designed and optimized for MacOS.
 Some adjustments have been made for chross platform compatability, however this can result in undefined behavior.
 
-Creates static library **libft.a** to be used in other projects.
-
 | Commands ||
 | --- | --- |
 | **make** | Creates the static library **libft.a** |
+| **make show** | Generates a list of files contained in **libft.a** |
 | **make norminette** | Checks all .c and .h files for their compliance to educational parameters. Requires Norminette to be installed. |
 | **make signature** | Prints an animated signature to the standard output. |
 
@@ -48,6 +46,3 @@ Project creating a function replicating printf's behavior. Added ft_dprintf (rep
 Project creating a function which reads a file discriptor and returns it contents one line at a time.
 
 ### Evaluations
-
-## Additionals
-The functionality of other projects required additional functions to be build. Whenever possible these functions were build in the most generalized way, allowing for more frequent usage. Those were added to the libft library.

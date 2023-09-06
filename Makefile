@@ -11,6 +11,9 @@ all: libft
 libft:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk
 
+show:
+	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk show
+
 norminette:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)miscellaneous.mk norm
 
@@ -30,5 +33,5 @@ re:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk re
 
 .PHONY: all clean fclean re\
-		libft \
+		libft show\
 		norminette norm signature

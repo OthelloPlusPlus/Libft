@@ -130,6 +130,8 @@ $(DIRS):
 	@mkdir "$@" || $(TRUE)
 	@$(STDOUT)	"$(CC_1UP)\t$(C_DCHRT)Created directory $(C_CHRT)%s$(C_DCHRT).$(C_RESET)\n" $@
 
+show:
+	@ar -t $(NAME)
 
 clean:
 	@$(STDOUT)	"$(CC_LINE)$(C_DORANGE)Removing object files...$(C_RESET)\n"
@@ -155,4 +157,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re show
