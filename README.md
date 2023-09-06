@@ -17,13 +17,11 @@ Some adjustments have been made for chross platform compatability, however this 
 
 Creates static library **libft.a** to be used in other projects.
 
-| Commands |  |
+| Commands |
 | --- | --- |
 | **make** | Creates the static library **libft.a** |
-Commands:
-- **make**:&nbsp;Creates the static library **libft.a**.
-- **make norminette**:&nbsp;Checks all .c and .h files for their compliance to educational parameters. Requires Norminette to be installed.
-- **make signature**:&nbsp;Prints an animated signature to the standard output.
+| **make norminette** | Checks all .c and .h files for their compliance to educational parameters. Requires Norminette to be installed. |
+| **make signature** | Prints an animated signature to the standard output. |
 
 ## Libft
 Original project creating the static archive, replicating existing functions and adding a few.
