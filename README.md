@@ -18,6 +18,7 @@ Some adjustments have been made for chross platform compatability, however this 
 Creates static library **libft.a** to be used in other projects.
 
 | Commands |  |
+| --- | --- |
 | **make** | Creates the static library **libft.a** |
 Commands:
 - **make**:&nbsp;Creates the static library **libft.a**.
