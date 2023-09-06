@@ -5,11 +5,6 @@ The projects have been made for study at [**Codam**](https://www.codam.nl/), par
 
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
 
-<details closed>
-  <summary>## Functions</summary>
-  World!
-</details>
-
 ## Table of Contents
 - [Execution](#Execution)
 - [Libft](#Libft)
@@ -31,9 +26,6 @@ Some adjustments have been made for cross platform compatability, however using 
 Original project creating the static archive, replicating existing functions and adding a few.
 
 **Score:** 120%
-<details closed>
-  <summary><b>Evaluations</b></summary>
-
 > "for the lst_add_front function you could add a protection for empty new, this would make sure your list cannot get lost when new is set to NULL. bonus files should be called *_bonus"
 > 		- Oswin Florian Bult
 
@@ -42,8 +34,6 @@ Original project creating the static archive, replicating existing functions and
 
 > "The best descriptions on the functions so far. Try to be consistent with choices about protections, so you know what to expect from your own code. Some points were debatable because segfault could occur, but the binary's also segfaulted, so we approved."
 > 		- Pascal Rudolphus Jacobus Spijkstra
-
-</details>
 
 ## ft_printf
 Project creating a function replicating printf's behavior. Afterwards ft_dprintf and ft_strprintf were added. ft_dprintf replicated the behavior of dprintf. ft_strprintf does not print its string but returns it instead.
