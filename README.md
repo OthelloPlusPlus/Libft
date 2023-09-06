@@ -5,8 +5,8 @@ The projects have been made for study at [**Codam**](https://www.codam.nl/), par
 
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
 
-<details open>
-  <summary>Hello</summary>
+<details closed>
+  <summary>## Functions</summary>
   World!
 </details>
 
