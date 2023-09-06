@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:13:54 by ohengelm      #+#    #+#                 */
-/*   Updated: 2023/08/04 20:53:34 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/09/06 14:28:56 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@
 #include <stdint.h>
 // uint64_t
 
-static int	check_valid_base(char *numbers);
+static int	check_valid_base(char *base_set);
 static void	*u_calloc(int size, int count);
 
-char	*ft_utoa_ultimate(uint64_t value, char *numbers)
+char	*ft_utoa_ultimate(uint64_t value, char *base_set)
 {
 	char	*a;
 	int		base;
 	int		size;
 
-	base = check_valid_base(numbers);
+	base = check_valid_base(base_set);
 	if (base < 2)
 		return (NULL);
 	size = ft_ulen(value, base);
@@ -47,28 +47,28 @@ char	*ft_utoa_ultimate(uint64_t value, char *numbers)
 	while (value != 0)
 	{
 		size--;
-		a[size] = numbers[value % base];
+		a[size] = base_set[value % base];
 		value = value / base;
 	}
 	return (a);
 }
 
-static int	check_valid_base(char *numbers)
+static int	check_valid_base(char *base_set)
 {
 	int	base;
 	int	i;
 
-	if (numbers == NULL)
+	if (base_set == NULL)
 		return (0);
 	base = 0;
-	while (numbers[base] != '\0')
+	while (base_set[base] != '\0')
 	{
-		if (numbers[base] < ' ' || numbers[base] > '~')
+		if (base_set[base] < ' ' || base_set[base] > '~')
 			return (0);
 		i = 0;
 		while (i < base)
 		{
-			if (numbers[base] == numbers[i])
+			if (base_set[base] == base_set[i])
 				return (0);
 			i++;
 		}

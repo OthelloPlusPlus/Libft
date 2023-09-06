@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:40 by ohengelm      #+#    #+#                 */
-/*   Updated: 2023/08/04 19:30:21 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/09/06 14:50:13 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 \* ==============ft_printf=============||==============©Othello============== */
 
 #include "libft.h"
-// char	*ft_utoa_ultimate(unsigned long long value, char *numbers)
-// void	*ft_calloc(size_t count, size_t size)
+// char		*ft_utoa_ultimate(unsigned long long value, char *numbers)
+// void		*ft_calloc(size_t count, size_t size)
 // size_t	ft_strlen(const char *s)
-// void	*ft_memcpy(void *dst, const void *src, size_t n)
+// void		*ft_memcpy(void *dst, const void *src, size_t n)
 #include "ft_printf_utils.h"
 // t_flags
 // void	ftp_make_flag_struct(const char *str, int *i, t_flags *flags)
@@ -34,8 +34,6 @@
 // type	va_arg(va_list ap, type);
 #include <stdlib.h>
 // void	free(void *)
-
-#define UNS unsigned
 
 static char	*ftp_call_argument(t_flags *flags);
 static char	*alloc_c(int c);
@@ -67,15 +65,15 @@ static char	*ftp_call_argument(t_flags *flags)
 	else if (flags->conv == 's')
 		str = alloc_s(va_arg(g_arg, char *));
 	else if (flags->conv == 'p')
-		str = ft_utoa_ultimate(va_arg(g_arg, UNS long), "0123456789abcdef");
+		str = ft_utoa_ultimate(va_arg(g_arg, unsigned long), "0123456789abcdef");
 	else if (flags->conv == 'd' || flags->conv == 'i')
 		str = ft_itoa_ultimate(va_arg(g_arg, int), "0123456789");
 	else if (flags->conv == 'u')
-		str = ft_utoa_ultimate(va_arg(g_arg, UNS int), "0123456789");
+		str = ft_utoa_ultimate(va_arg(g_arg, unsigned int), "0123456789");
 	else if (flags->conv == 'x')
-		str = ft_utoa_ultimate(va_arg(g_arg, UNS int), "0123456789abcdef");
+		str = ft_utoa_ultimate(va_arg(g_arg, unsigned int), "0123456789abcdef");
 	else if (flags->conv == 'X')
-		str = ft_utoa_ultimate(va_arg(g_arg, UNS int), "0123456789ABCDEF");
+		str = ft_utoa_ultimate(va_arg(g_arg, unsigned int), "0123456789ABCDEF");
 	return (str);
 }
 

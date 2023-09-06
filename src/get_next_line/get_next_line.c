@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/11 14:22:47 by ohengelm      #+#    #+#                 */
-/*   Updated: 2023/08/04 19:01:10 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/09/06 14:46:02 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static bool	st_add_from_buffer(char *next_line, char *buffer);
 #endif
 
 #ifndef OPEN_MAX
-# define  OPEN_MAX	256
+# define OPEN_MAX	256
 #endif
 
 enum	e_indexGNL

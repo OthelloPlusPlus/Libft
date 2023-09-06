@@ -6,7 +6,7 @@
 /*   By: ohengelm <ohengelm@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/04/02 21:14:48 by ohengelm      #+#    #+#                 */
-/*   Updated: 2023/08/04 19:45:31 by ohengelm      ########   odam.nl         */
+/*   Updated: 2023/09/06 14:29:13 by ohengelm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@
 // int	ft_ilen(long long value, int base)
 // void	*ft_calloc(size_t count, size_t size)
 
-static int	check_valid_base(char *numbers);
+static int	check_valid_base(char *base_set);
 static void	*i_calloc(int size, int count, int pn);
 
-char	*ft_itoa_ultimate(long long value, char *numbers)
+char	*ft_itoa_ultimate(long long value, char *base_set)
 {
 	char	*a;
 	int		base;
 	int		size;
 	int		pn;
 
-	base = check_valid_base(numbers);
+	base = check_valid_base(base_set);
 	if (base < 2)
 		return (NULL);
 	size = ft_ilen(value, base);
@@ -47,28 +47,28 @@ char	*ft_itoa_ultimate(long long value, char *numbers)
 	while (value != 0)
 	{
 		size--;
-		a[size] = numbers[value % base * pn];
+		a[size] = base_set[value % base * pn];
 		value = value / base;
 	}
 	return (a);
 }
 
-static int	check_valid_base(char *numbers)
+static int	check_valid_base(char *base_set)
 {
 	int	base;
 	int	i;
 
-	if (numbers == NULL)
+	if (base_set == NULL)
 		return (0);
 	base = 0;
-	while (numbers[base] != '\0')
+	while (base_set[base] != '\0')
 	{
-		if (numbers[base] < ' ' || numbers[base] > '~')
+		if (base_set[base] < ' ' || base_set[base] > '~')
 			return (0);
 		i = 0;
 		while (i < base)
 		{
-			if (numbers[base] == numbers[i])
+			if (base_set[base] == base_set[i])
 				return (0);
 			i++;
 		}
