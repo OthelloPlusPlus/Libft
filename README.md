@@ -1,9 +1,14 @@
 # Introduction
-A compliation of several projects which together create the static library **libft.a**. The library was originally created during the **Libft** project and contains a group of useful functions, most of which are replications of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This has later been completmented in the projects **ft_printf** and **get_next_line**, and has been further complemented by functions I found useful for general usage during later projects.
+A compilation of several projects written in **C code** which together create the static library **libft.a**. The library was originally created during the **Libft** project and contains a group of useful functions, most of which are recreations of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This library has leter been complemented with the functions from the projects **ft_printf** and **get_next_line** and other functions I found useful for general usage.
 
 The projects have been made for study at [**Codam**](https://www.codam.nl/), part of [**42network**](https://www.42network.org/).
 
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
+
+<details open>
+  <summary>Hello</summary>
+  World!
+</details>
 
 ## Table of Contents
 - [Execution](#Execution)
@@ -13,7 +18,7 @@ Projects have been made conform **42**'s requirements, with exceptions where com
 
 ## Execution
 Functions have been designed and optimized for MacOS.
-Some adjustments have been made for cross platform compatability, however this can result in undefined behavior.
+Some adjustments have been made for cross platform compatability, however using it on other platforms can still result in undefined behavior.
 
 | Commands ||
 | --- | --- |
@@ -38,7 +43,7 @@ Original project creating the static archive, replicating existing functions and
 > 		- Pascal Rudolphus Jacobus Spijkstra
 
 ## ft_printf
-Project creating a function replicating printf's behavior. Added ft_dprintf (replicating dprintf) and ft_strprintf (returning the string in stead of printing it).
+Project creating a function replicating printf's behavior. Afterwards ft_dprintf and ft_strprintf were added. ft_dprintf replicated the behavior of dprintf. ft_strprintf does not print its string but returns it instead.
 
 ### Evaluations
 **Score:** 120%
@@ -52,7 +57,7 @@ Project creating a function replicating printf's behavior. Added ft_dprintf (rep
 >		- Giovanni Nieuwkamp
 
 ## get_next_line
-Project creating a function which reads a file discriptor and returns it contents one line at a time.
+Project creating a function which reads a file descriptor and returns its contents one line per call of the function.
 
 ### Evaluations
 **Score:** 124%
