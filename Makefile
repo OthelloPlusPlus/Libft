@@ -29,8 +29,6 @@ fclean:
 re:
 	@$(MAKE) -f $(MKF_DIR)$(DELIM)libft.mk re
 
-bonus: all
-
 .PHONY: all clean fclean re\
 		libft \
 		norminette norm signature
