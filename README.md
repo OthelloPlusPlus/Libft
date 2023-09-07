@@ -1,7 +1,7 @@
 # Introduction
 A compilation of several projects written in **C code** which together create the static library **libft.a**. The library was originally created during the **Libft** project and contains a group of useful functions, most of which are recreations of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This library has later been complemented with the functions from the projects **ft_printf** and **get_next_line** and other functions I found useful for general usage.
 
-The projects have been made for study at [**Codam**](https://www.codam.nl/), part of [**42network**](https://www.42network.org/).
+The projects are part of the curriculum at [**Codam**](https://www.codam.nl/), part of [**42network**](https://www.42network.org/). 
 
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
 
