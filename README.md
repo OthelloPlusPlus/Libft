@@ -6,7 +6,7 @@ The projects have been made for study at [**Codam**](https://www.codam.nl/), par
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
 
 ## Table of Contents
-- [Makefile_Execution](#Makefile_Execution)
+- [Makefile Execution](#Makefile-Execution)
 - [Libft](#Libft)
 - [ft_printf](#ft_printf)
 - [get_next_line](#get_next_line)
