@@ -1,26 +1,59 @@
 # Introduction
-A compilation of several projects written in **C code** which together create the static library **libft.a**. The library was originally created during the **Libft** project and contains a group of useful functions, most of which are recreations of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This library has later been complemented with the functions from the projects **ft_printf** and **get_next_line** and other functions I found useful for general usage.
+A compilation of several projects written in **C code** which together create the static library **libft.a**. The library was originally created during the [**Libft**](src) project and contains a group of useful functions, most of which are recreations of existing functions. Others are similar functions which one might expect to exist in the offical libraries, but do not. This library has later been complemented with the functions from the projects [****ft_printf****](src/ft_printf) and [**get_next_line**](src/get_next_line) and other functions I found useful for general usage.
 
 The projects are part of the curriculum at [**Codam**](https://www.codam.nl/), part of [**42network**](https://www.42network.org/). 
 
 Projects have been made conform **42**'s requirements, with exceptions where compliance resulted in less clean code.
 
 ## Table of Contents
-- [Makefile Execution](#Makefile-Execution)
-- [Libft](#Libft)
-- [ft_printf](#ft_printf)
-- [get_next_line](#get_next_line)
+- [Usage](#usage)
+- Projects
+  - [Libft](#libft)
+  - [ft_printf](#ft_printf)
+  - [get_next_line](#get_next_line)
+- [Creator](#creator)
 
-## Makefile Execution
+# Usage
 Functions have been designed and optimized for MacOS.
 Some adjustments have been made for cross platform compatability, however using it on other platforms can still result in undefined behavior.
 
-| Commands ||
-| --- | --- |
-| **make** | Creates the static library **libft.a** |
-| **make show** | Generates a list of files contained in **libft.a** |
-| **make norminette** | Checks all .c and .h files for their compliance to educational parameters. Requires Norminette to be installed. |
-| **make signature** | Prints an animated signature to the standard output |
+<table>
+	<thead style="background-color: #C0C0C0;">
+		<tr><th colspan="3">Terminal Commands</th></tr>
+		<tr>
+			<th>Command</th>
+			<th>Arguments</th>
+			<th>Functionality</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="Makefile" target="_blank">make</a></td>
+			<td></td>
+			<td>Creates the static library <b>libft.a</b></td>
+		</tr>
+		<tr>
+			<td><a href="Makefile" target="_blank">make</a></td>
+			<td>show</td>
+			<td>Generates a list of files contained in <b>libft.a</b></td>
+		</tr>
+		<tr>
+			<td><a href="Makefile" target="_blank">make</a></td>
+			<td>norminette</td>
+			<td>Checks all .c and .h files for their compliance to educational parameters.<br>Requires Norminette to be installed.</td>
+		</tr>
+		<tr>
+			<td><a href="Makefile" target="_blank">make</a></td>
+			<td>signature</td>
+			<td>Prints an animated signature to the standard output</td>
+		</tr>
+		<tr>
+			<td>gcc *.c</td>
+			<td>-L. -lft</td>
+			<td>Includes the static library <b>libft.a</b> to compliation.</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Libft
 Original project creating the static archive, replicating existing functions and adding a few.
@@ -62,3 +95,8 @@ Project creating a function which reads a file descriptor and returns its conten
 
 > "Very nice work! Very clean and also nice self made tester! Good luck!!"
 >		- Milan Weitenberg
+
+# Creator
+Othello<br>
+[<img alt="LinkedIn" height="32px" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" target="_blank" />](https://github.com/OthelloPlusPlus)
+[<img alt="LinkedIn" height="32px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" target="_blank" />](https://nl.linkedin.com/in/orlando-hengelmolen)
